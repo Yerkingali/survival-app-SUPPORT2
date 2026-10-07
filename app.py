@@ -67,7 +67,7 @@ DIAGNOSES = {
     "Cirrhosis": ("Liver Cirrhosis",
                   "Severe scarring of the liver, so it can no longer do its job properly."),
     "Coma": ("Non-traumatic Coma",
-             "Deep unconsciousness not caused by an injury — for example after a stroke "
+             "Deep unconsciousness not caused by an injury - for example after a stroke "
              "or cardiac arrest."),
     "Colon Cancer": ("Metastatic Colon Cancer",
                      "Bowel cancer that has spread to other organs, most often the liver."),
@@ -117,7 +117,7 @@ st.markdown(
     "Enter a patient profile on the left and the model estimates the chances, "
     "based on **9,105 real patients** from the SUPPORT2 study."
 )
-st.caption("⚠️ A data-science portfolio project — not a medical tool and not for clinical decisions.")
+st.caption("⚠️ A data-science portfolio project - not a medical tool and not for clinical decisions.")
 
 tab_pred, tab_why, tab_models, tab_glossary = st.tabs(
     ["📈 Forecast", "🔍 What drives the risk", "📊 How good is the model", "📖 Glossary of main diagnosises"])
@@ -215,16 +215,16 @@ with tab_models:
     st.dataframe(pd.DataFrame(meta["metrics"]).T, width="stretch")
     st.markdown(
         "**What the numbers mean**\n"
-        "- **C-index** — if you pick two patients at random, how often the model correctly "
+        "- **C-index** - if you pick two patients at random, how often the model correctly "
         "says who is at higher risk. 0.5 = coin flip, 1.0 = perfect.\n"
-        "- **Time-AUC** — the same idea, checked at many points in time.\n"
-        "- **IBS** — how far the predicted probabilities are from reality. Lower is better.\n\n"
+        "- **Time-AUC** - the same idea, checked at many points in time.\n"
+        "- **IBS** - how far the predicted probabilities are from reality. Lower is better.\n\n"
         "**Which model is used and why**\n"
         "- Both models rank patients by risk equally well.\n"
         "- The second model (Random Survival Forest) is slightly better on average, but it "
         "underestimates the risk for the sickest patients.\n"
         "- The **Cox model** gives more reliable probabilities exactly where it matters most "
-        "and is easy to explain — so it is the main model in this app."
+        "and is easy to explain - so it is the main model in this app."
     )
 
 # ---------------- Glossary ----------------
